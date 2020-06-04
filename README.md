@@ -56,7 +56,7 @@ This was made using Ubuntu, so I will assume you have a similar environment if y
 
 # Post-install
 
-* There's an ad popping up in the bottom left corner, and it's included in the Regexr source and not associated with me. Considering this is supposed to be an as stand alone, self hosted solution as possible, you man want to look for the ad generation code and comment that out, to not start getting ad traffic from networks you don't want.
+* There's an ad popping up in the bottom left corner. This is included in the Regexr source and not associated with me. Considering this is supposed to be an as stand alone, self hosted solution as possible, you may want to look for the ad generation code and comment that out, to not start getting ad traffic from networks you don't want.
 
 # Accessing
 
