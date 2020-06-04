@@ -1,0 +1,36 @@
+version: "3"
+services:
+        app:
+                build:
+                        context: .
+                        dockerfile: Dockerfile-app
+                container_name: regexr-app
+                ports:
+                        - "3000:3000"
+                        - "3001:3001"
+                volumes:
+                        - ./regexr-3.6.1/:/regexr/
+                        - node_modules:/regexr/node_modules
+        api:
+                build:
+                        context: .
+                        dockerfile: Dockerfile-api
+                container_name: regexr-api
+                ports:
+                        - "8888:80"
+                volumes:
+                        - ./regexr-3.6.1/:/var/www/html/
+                        - vendor:/var/www/html/server/vendor/
+        db:
+                image: percona:5.7-centos
+                container_name: regexr-db
+                command: --sql_mode=""
+                environment:
+                        MYSQL_ROOT_PASSWORD: 'Impish capacity footgear partyanimal 1234'
+                ports:
+                        - "3307:3306"
+                volumes:
+                        - ./datastore:/var/lib/mysql
+volumes:
+        node_modules:
+        vendor:

@@ -1,0 +1,11 @@
+FROM node:8.16.1-buster-slim
+
+COPY regexr-3.6.1 /regexr
+
+RUN cd /regexr && npm install -g gulp && npm install
+
+WORKDIR /regexr
+
+EXPOSE 3000
+
+ENTRYPOINT "gulp"
